@@ -1,0 +1,16 @@
+<template name='uploadMyWork'>
+        <div class='well'>
+            <div class='form-inline'>
+                <div class='form-group'>
+                    <input type='text' class='form-control' name='title' placeholder='title'>
+                    <input type='text' class='form-control' name='price' placeholder='price'>
+                    <input type='text' class='form-control' name='copyright' placeholder='copyright'>
+                    <input type='file' class='form-control' name='filename' placeholder='filename'>
+                    <button id='showMyWork' name='showMyWork'>show my works</button>
+                    <button class='btn btn-sm' name='register'><i class='glyphicon glyphicon-ok'></i>등록</button>
+                    <div id='my_tokens'></div>
+                </div>
+            </div>
+        </div>
+        {{>myWorks}}
+    </template>

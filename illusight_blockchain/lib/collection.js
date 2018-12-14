@@ -1,0 +1,1 @@
+Masterpiece = new Mongo.Collection('Masterpiece');

@@ -1,0 +1,57 @@
+<template name='user'>
+    <div id='userInfo'>
+        <div id='userAddr'>My address : <span id='userId'>{{user}}</span></div>
+    </div>
+</template>
+
+
+
+
+<template name='myWorks'>
+    <table class='table table-borderless table-condensed table-hover'>
+        <thead>
+            <tr class='active'>
+                <th>title</th>
+                <th>price</th>
+                <th>copyright</th>
+                <th>filename</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each list}}
+                {{#if editing}}
+                    <tr>
+                        <td><input type='text' style='width:100%' name='title' value='{{title}}'/></td>
+                        <td><input type='text' style='width:100%' name='price' value='{{price}}'/></td>
+                        <td><input type='text' style='width:100%' name='copyright' value='{{copyright}}'/></td>
+                        <td><input type='text' style='width:100%' name='filename' value='{{filename}}'/></td>
+                        <td>
+                            <button class='btn btn-sm' name='save'>
+                                <i class='glyphicon glyphicon-ok'></i>save
+                            </button>
+                            <button class='btn btn-sm' name='cancel'>
+                                <i class='glyphicon glyphicon-repeat'></i>cancel
+                            </button>
+                        </td>
+                    </tr>
+                {{else}}
+                    <tr>
+                            <td><div class='edit-thing'>{{title}}</div></td>
+                            <td><div class='edit-thing'>{{price}}</div></td>
+                            <td><div class='edit-thing'>{{copyright}}</div></td>
+                            <td><div class='edit-thing'>{{filename}}</div></td>
+                            <td>
+                                <button class='btn btn-sm' name='remove'>
+                                    <i class='glyphicon glyphicon-trash'></i>delete
+                                </button>
+                                <button class='btn btn-sm' name='modify'>
+                                    <i class='glyphicon glyphicon-wrench'></i>modify
+                                </button>
+                            </td>
+                        </tr>
+                {{/if}}
+            {{/each}}
+        </tbody>
+    </table>
+</template>
